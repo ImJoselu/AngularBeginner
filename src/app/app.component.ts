@@ -11,6 +11,7 @@ import {FooterComponent} from "./footer/footer.component";
   imports: [CommonModule, HotelCardComponent, FooterComponent]
 })
 export class AppComponent {
+
   hotels = [
     {
       nombre: 'Belmond Copacabana Palace',
@@ -39,5 +40,4 @@ export class AppComponent {
       imageURL: 'https://static-new.lhw.com/HotelImages/Final/LW1401/lw1401_128953575_720x450.jpg'
     },
   ];
-
 }
