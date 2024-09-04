@@ -45,4 +45,8 @@ export class AppComponent  {
       ranking: 5
     },
   ];
+
+  get hotelCount(): number {
+    return this.hotels.length;
+  }
 }
