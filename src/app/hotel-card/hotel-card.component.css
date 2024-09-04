@@ -1,37 +1,54 @@
+/* Estilo general para la tarjeta */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   margin: 15px;
-  width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* Fondo blanco para las tarjetas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos de hover */
+  height: 100%; /* Asegura que la tarjeta ocupe todo el espacio disponible en el contenedor */
 }
 
+/* Efecto de hover para la tarjeta */
+.card:hover {
+  transform: scale(1.03); /* Agranda la tarjeta ligeramente al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el mouse */
+}
+
+/* Estilo para la imagen de la tarjeta */
 .card-img {
   width: 100%;
   height: 150px;
   object-fit: cover;
 }
 
+/* Estilo para el contenido de la tarjeta */
 .card-content {
-  position: relative;
   padding: 15px;
-  height: 250px;
+  flex: 1; /* Permite que el contenido se expanda para llenar el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia el contenido para empujar la ubicación hacia el fondo */
 }
 
+/* Estilo para el nombre del hotel */
 .card-content h3 {
   margin: 0 0 10px;
   font-size: 18px;
+  color: #333;
 }
 
+/* Estilo para la descripción del hotel */
 .card-content p {
   margin: 5px 0;
   color: #555;
 }
 
+/* Estilo para el texto de ubicación */
 .location-text {
-  position: absolute;
-  bottom: 10px;
-  left: 16px;
-  right: 16px;
+  font-size: 14px;
+  color: #777;
 }
