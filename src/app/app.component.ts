@@ -10,7 +10,7 @@ import {FooterComponent} from "./footer/footer.component";
   standalone: true,
   imports: [CommonModule, HotelCardComponent, FooterComponent]
 })
-export class AppComponent {
+export class AppComponent  {
 
   hotels = [
     {
