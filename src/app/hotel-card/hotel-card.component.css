@@ -47,6 +47,12 @@
   color: #555;
 }
 
+.stars-ranking {
+  position: relative;
+  font-size: 12px;
+  top: -1px
+}
+
 /* Estilo para el texto de ubicación */
 .location-text {
   font-size: 14px;

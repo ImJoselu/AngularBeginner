@@ -14,11 +14,13 @@ export class HotelCardComponent {
     descripcion: string;
     location: string;
     imageURL: string;
+    ranking: number;
   } = {
     nombre: '',
     descripcion: '',
     location: '',
-    imageURL: ''
+    imageURL: '',
+    ranking: 0
   };
 
   @Input()
@@ -27,6 +29,7 @@ export class HotelCardComponent {
     descripcion: string;
     location: string;
     imageURL: string;
+    ranking: number;
   }) {
     this._hotel = value;
   }
