@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {HotelCardComponent} from "./hotel-card/hotel-card.component";
+
 import {FooterComponent} from "./footer/footer.component";
+import {HotelCardComponent} from "./hotel-card/hotel-card.component";
+import {NavbarComponent} from "./navbar/navbar.component";
+import { CommonModule } from '@angular/common'; // Asegúrate de importar CommonModule
+
+
+import { Component, OnInit } from '@angular/core';
+import {Router, NavigationEnd, RouterOutlet} from '@angular/router';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CommonModule, HotelCardComponent, FooterComponent]
+  imports: [
+    FooterComponent,
+    HotelCardComponent,
+    NavbarComponent,
+    RouterOutlet,
+    CommonModule
+  ],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
 
+export class AppComponent  {
   hotels = [
     {
       nombre: 'Belmond Copacabana Palace',
@@ -44,7 +57,22 @@ export class AppComponent  {
       imageURL: 'https://static-new.lhw.com/HotelImages/Final/LW1401/lw1401_128953575_720x450.jpg',
       ranking: 5
     },
+
+
   ];
+
+  currentRoute: string = '';
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.currentRoute = event.urlAfterRedirects;
+      console.log('Current route:', this.currentRoute); // Verifica la ruta actual
+    });
+  }
 
   get hotelCount(): number {
     return this.hotels.length;

@@ -1,5 +1,10 @@
-<div class="counter"></div>
-<div class="hotel-list">
-  <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
-  <app-footer></app-footer>
+<app-navbar></app-navbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+  <ng-container *ngIf="currentRoute === '' || currentRoute === '/'">
+    <div class="hotel-list">
+    <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
+    </div>
+  </ng-container>
 </div>
+<app-footer></app-footer>

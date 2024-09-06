@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
   imports: [CommonModule]
 })
 export class HotelCardComponent {
+
+
   private _hotel: {
     nombre: string;
     descripcion: string;
