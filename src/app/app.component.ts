@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common'; // Asegúrate de importar Common
 import { Component, OnInit } from '@angular/core';
 import {Router, NavigationEnd, RouterOutlet} from '@angular/router';
 import { filter } from 'rxjs/operators';
+import {LoginComponent} from "./login/login.component";
+import {ShippingBoardComponent} from "./shipping-board/shipping-board.component";
 
 
 @Component({
@@ -16,6 +18,8 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   imports: [
     FooterComponent,
+    LoginComponent,
+    ShippingBoardComponent,
     HotelCardComponent,
     NavbarComponent,
     RouterOutlet,

@@ -14,4 +14,8 @@ export class NavbarComponent {
   navigateToLogin() {
     this.router.navigate(['/login']);
   }
+
+  navigateToTable() {
+    this.router.navigate(['/table']);
+  }
 }

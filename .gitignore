@@ -1,4 +1,5 @@
 # ImJoselu GitIgnore Proyecto Angular
+/CoreUI/*
 # Node.js dependencies and environment files
 /node_modules
 /npm-debug.log*

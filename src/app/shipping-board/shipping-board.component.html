@@ -1,0 +1,41 @@
+<div class="header">
+  <div class="plant-name-container">
+    <span class="plant-name">Plant Name</span>
+  </div>
+  <div class="shipping-board-title">
+    <span>Shipping and Receiving Board</span>
+    <div class="filters">
+      <button [ngClass]="{'active': filter === 'ALL'}" (click)="filter = 'ALL'">ALL</button>
+      <button [ngClass]="{'active': filter === 'Customers'}" (click)="filter = 'Customers'">Customers</button>
+      <button [ngClass]="{'active': filter === 'Suppliers'}" (click)="filter = 'Suppliers'">Suppliers</button>
+    </div>
+  </div>
+  <div class="week-navigation">
+    <button (click)="previousWeek()"> &lt; Week {{ currentWeek - 1 }}</button>
+    <span>Week {{ currentWeek }}</span>
+    <button (click)="nextWeek()">Week {{ currentWeek + 1 }} &gt;</button>
+  </div>
+</div><div class="table-header">
+  <div class="header-cell">Customer / Supplier (Logo)</div>
+  <div class="header-cell">Customer / Supplier (Name)</div>
+  <div class="header-cell">Customer / Supplier (Quantity)</div>
+  <div class="header-cell">Customer / Supplier (Location)</div>
+  <div class="header-cell">Planned Arrival Time</div>
+  <div class="header-cell">Planned Downtime Time</div>
+  <div *ngFor="let day of daysOfWeek" class="header-cell">
+    {{ day | date: 'EEEE dd/MMM' }}
+  </div>
+</div>
+<div *ngFor="let entry of data" class="table-row">
+  <div class="cell">
+    <img [src]="entry.logoUrl" alt="Logo" class="logo-image" />
+  </div>
+  <div class="cell">{{ entry.name }}</div>
+  <div class="cell">{{ entry.quantity }}</div>
+  <div class="cell">{{ entry.location }}</div>
+  <div class="cell">{{ entry.plannedArrival }}</div>
+  <div class="cell">{{ entry.plannedDowntime }}</div>
+  <div *ngFor="let day of daysOfWeek" class="cell">
+    {{ getEventForDay(entry, day) }}
+  </div>
+</div>
