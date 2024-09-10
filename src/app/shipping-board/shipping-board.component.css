@@ -6,9 +6,31 @@
   padding: 10px;
   color: white;
 }
-
+/* Contenedor del nombre de la planta y el botón */
 .plant-name-container {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el nombre y el botón */
+}
+
+/* Estilo del nombre de la planta */
+.plant-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilo del botón de edición */
+.function-button {
+  background-color: transparent; /* Sin fondo */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Apunta el cursor */
+}
+
+/* Estilo de la imagen dentro del botón */
+.function-button img {
+  width: 24px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 24px;
+  vertical-align: middle; /* Alinea la imagen verticalmente */
 }
 
 .shipping-board-title {
@@ -79,3 +101,49 @@
   width: 50px;
   height: 50px;
 }
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+

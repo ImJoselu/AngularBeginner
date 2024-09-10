@@ -1,0 +1,15 @@
+<div class="popup-overlay" (click)="onClose()"></div>
+<div class="popup-content">
+  <div class="popup-header">
+    <h2>Select {{ title }}</h2>
+    <button class="close-button" (click)="onClose()">×</button>
+  </div>
+  <div class="popup-body">
+    <ul>
+       <li *ngFor="let item of items" (click)="selectItem(item)" [class.selected]="item === selectedItem">{{ item }}</li>
+    </ul>
+  </div>
+  <div class="popup-footer">
+    <button (click)="onSave()">Save</button>
+  </div>
+</div>

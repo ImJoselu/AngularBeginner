@@ -1,8 +1,24 @@
 <div class="header">
   <div class="plant-name-container">
-    <span class="plant-name">Plant Name</span>
+    <span class="plant-name">{{plantTitle}}</span>
+    <button (click)="openPopup('plants')" class="function-button">
+      <img src="assets/images/functions/edit.png" alt="Edit Plant">
+    </button>
+    <button (click)="openPopup('languages')" class="function-button">
+      <img src="assets/images/functions/idiomas.png" alt="Edit Language">
+    </button>
+
+    <!-- Popup -->
+    <app-dynamic-popup
+      *ngIf="showPopup"
+      [title]="popupTitle"
+      [items]="popupItems"
+      (save)="savePopup($event)"
+      (close)="closePopup()">
+    </app-dynamic-popup>
   </div>
-  <div class="shipping-board-title">
+  <!-- Resto del contenido del componente... -->
+<div class="shipping-board-title">
     <span>Shipping and Receiving Board</span>
     <div class="filters">
       <button [ngClass]="{'active': filter === 'ALL'}" (click)="filter = 'ALL'">ALL</button>

@@ -1,6 +1,8 @@
+// shipping-board.component.ts
 import { Component, OnInit } from '@angular/core';
 import { startOfISOWeek, addDays, format, getISOWeek, addWeeks } from 'date-fns';
 import { DatePipe, NgClass, CommonModule } from '@angular/common';
+import { DynamicPopupComponent } from '../dynamic-popup/dynamic-popup.component';
 
 // Define interfaces for type safety
 interface Event {
@@ -23,9 +25,10 @@ interface DataEntry {
   templateUrl: './shipping-board.component.html',
   standalone: true,
   imports: [
-    CommonModule, // Asegúrate de importar CommonModule aquí
+    CommonModule,
     NgClass,
-    DatePipe
+    DatePipe,
+    DynamicPopupComponent,
   ],
   styleUrls: ['./shipping-board.component.css']
 })
@@ -34,6 +37,10 @@ export class ShippingBoardComponent implements OnInit {
   currentDate: Date;
   daysOfWeek: Date[] = [];
   filter: string = 'ALL';
+  popupTitle: string = '';
+  popupItems: string[] = [];
+  showPopup: boolean = false;
+  plantTitle: string = 'Plant 1';  // Título inicial de la planta
 
   data: DataEntry[] = [
     {
@@ -47,7 +54,8 @@ export class ShippingBoardComponent implements OnInit {
         { date: new Date(), description: 'Event 1' },
         { date: addDays(new Date(), 1), description: 'Event 2' }
       ],
-    },{
+    },
+    {
       logoUrl: './assets/images/logos/ferrari.png',
       name: 'Customer 2',
       quantity: '50',
@@ -59,7 +67,6 @@ export class ShippingBoardComponent implements OnInit {
         { date: addDays(new Date(), 1), description: 'Event 2' }
       ],
     },
-
     // Agrega más entradas si es necesario...
   ];
 
@@ -101,4 +108,26 @@ export class ShippingBoardComponent implements OnInit {
     const event = entry.events.find(e => format(e.date, 'yyyy-MM-dd') === format(day, 'yyyy-MM-dd'));
     return event ? event.description : '';
   }
+
+  openPopup(type: 'plants' | 'languages') {
+    this.popupTitle = type === 'plants' ? 'Change Plant' : 'Change Language';
+    this.popupItems = type === 'plants' ? ['Plant 1', 'Plant 2', 'Plant 3'] : ['English', 'Spanish', 'French', 'Russian'];
+    this.showPopup = true;
+
+    // JLTor: Verifica que los valores se están configurando correctamente
+    console.log('Popup Title:', this.popupTitle);
+    console.log('Popup Items:', this.popupItems);
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
+
+  savePopup(selectedItem: string) {
+    if (this.popupTitle.toLowerCase() === 'change plant') {  // Asegúrate de que el título coincide exactamente
+      this.plantTitle = selectedItem;  // Actualiza el título de la planta
+    }
+    this.showPopup = false;
+  }
 }
+
