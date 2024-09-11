@@ -1,57 +1,77 @@
+/* Estilo para el encabezado */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c2d438;
-  padding: 10px;
+  background-color: #86b738; /* Verde moderno */
+  padding: 15px;
   color: white;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* Contenedor del nombre de la planta y el botón */
 .plant-name-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el nombre y el botón */
+  gap: 15px; /* Espacio entre el nombre y el botón */
 }
 
 /* Estilo del nombre de la planta */
 .plant-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 /* Estilo del botón de edición */
 .function-button {
-  background-color: transparent; /* Sin fondo */
-  border: none; /* Sin borde */
-  cursor: pointer; /* Apunta el cursor */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* Transición suave al interactuar */
+}
+
+.function-button:hover {
+  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
 }
 
 /* Estilo de la imagen dentro del botón */
 .function-button img {
-  width: 24px; /* Ajusta el tamaño de la imagen según tus necesidades */
-  height: 24px;
-  vertical-align: middle; /* Alinea la imagen verticalmente */
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
 }
 
+/* Título del tablero de envíos */
 .shipping-board-title {
   flex: 2;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #ffffff;
 }
 
+/* Estilo de los botones de filtro */
 .filters button {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 15px;
   font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.filters button:hover {
+  color: #ffeb3b; /* Amarillo brillante al pasar el mouse */
 }
 
 .filters .active {
   border-bottom: 2px solid white;
 }
 
+/* Navegación de la semana */
 .week-navigation {
   flex: 1;
   text-align: right;
@@ -62,53 +82,69 @@
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.1em;
+  transition: color 0.2s ease-in-out;
 }
 
+.week-navigation button:hover {
+  color: #ffeb3b;
+}
+
+/* Contenedor de la tabla */
 .table-container {
   width: 100%;
   overflow-x: auto;
-  margin-top: 10px;
+  margin-top: 15px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo para encabezados y celdas */
 .table-header, .table-row {
   display: flex;
 }
 
 .header-cell, .cell {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: 1px solid #ddd;
   text-align: center;
-  background-color: #f0f0f0;
 }
 
 .header-cell {
   font-weight: bold;
-  background-color: #c2d438;
+  background-color: #86b738;
   color: white;
 }
 
 .cell {
   background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cell:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
 }
 
 .table-row:nth-child(even) .cell {
-  background-color: #f9f9f9;
+  background-color: #fafafa;
 }
 
 .logo-image {
   width: 50px;
   height: 50px;
+  border-radius: 50%; /* Hace que los logos sean redondos */
+  border: 2px solid #ddd;
 }
 
+/* Estilo del popup */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,11 +153,12 @@
 
 .popup-content {
   background: white;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 25px;
   max-width: 500px;
-  width: 100%;
+  width: 90%;
   position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .popup-header {
@@ -135,15 +172,65 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #ff4d46; /* Rojo característico */
+  transition: color 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  color: #d12d26; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Cuerpo del popup */
+.popup-body {
+  margin-top: 15px;
 }
 
 .popup-body ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto; /* Permite desplazamiento cuando hay más de 3 elementos */
+  scrollbar-width: thin;
+  scrollbar-color: #86b738 transparent;
 }
 
+.popup-body li {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup-body li:hover {
+  background-color: #86b738;
+  color: white;
+}
+
+.popup-body li.selected {
+  background-color: #86b738;
+  color: white;
+}
+
+/* Pie del popup */
 .popup-footer {
   margin-top: 20px;
   text-align: right;
 }
 
+.popup-footer button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup-footer button:hover {
+  background-color: #0056b3;
+}

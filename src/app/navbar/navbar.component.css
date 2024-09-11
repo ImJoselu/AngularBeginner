@@ -1,27 +1,36 @@
+/* Estilo general para la barra de navegación */
 .navbar {
-  background-color: #333;
-  padding: 10px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Centra los botones en la barra de navegación */
+  align-items: center;
+  background-color: #333; /* Fondo oscuro para la barra */
+  padding: 15px;
+  border-bottom: 2px solid #444; /* Línea sutil en la parte inferior */
+  border-radius: 10px;
+  margin: 3px;
 }
 
-.navbar ul li {
-  margin: 0 10px;
+/* Estilo para los botones en la barra de navegación */
+.navbar button {
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  margin: 0 10px; /* Espaciado horizontal entre botones */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
 }
 
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 3px;
+/* Efecto al pasar el ratón sobre los botones */
+.navbar button:hover {
+  background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
 }
 
-.navbar ul li a:hover {
-  background-color: #555;
+/* Efecto al hacer clic en los botones */
+.navbar button:active {
+  background-color: #004494; /* Color de fondo aún más oscuro al hacer clic */
+  transform: scale(0.98); /* Efecto de reducción al hacer clic */
 }

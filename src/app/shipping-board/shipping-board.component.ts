@@ -40,7 +40,7 @@ export class ShippingBoardComponent implements OnInit {
   popupTitle: string = '';
   popupItems: string[] = [];
   showPopup: boolean = false;
-  plantTitle: string = 'Plant 1';  // Título inicial de la planta
+  plantTitle: string = 'Ground Floor';  // Título inicial de la planta
 
   data: DataEntry[] = [
     {
@@ -111,7 +111,7 @@ export class ShippingBoardComponent implements OnInit {
 
   openPopup(type: 'plants' | 'languages') {
     this.popupTitle = type === 'plants' ? 'Change Plant' : 'Change Language';
-    this.popupItems = type === 'plants' ? ['Plant 1', 'Plant 2', 'Plant 3'] : ['English', 'Spanish', 'French', 'Russian'];
+    this.popupItems = type === 'plants' ? ['Ground Floor', 'Humanitarian Floor', 'Logistical Floor', 'IT Floor'] : ['English', 'Spanish', 'French', 'Russian'];
     this.showPopup = true;
 
     // JLTor: Verifica que los valores se están configurando correctamente

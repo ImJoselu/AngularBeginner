@@ -1,25 +1,23 @@
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* Reemplaza top, left, width, height con inset */
   background: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
-  z-index: 999; /* Coloca la superposición en frente de otros elementos */
+  z-index: 999;
 }
 
 .popup-content {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centra el popup en la pantalla */
+  transform: translate(-50%, -50%);
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Coloca el contenido por encima de la superposición */
+  z-index: 1000;
   width: 80%;
-  max-width: 500px; /* Limita el ancho máximo */
+  max-width: 500px;
+
 }
 
 .popup-header {
@@ -31,20 +29,21 @@
 }
 
 .popup-header h2 {
-  font-size: 24px; /* Tamaño de fuente más grande */
+  font-size: 24px;
   margin: 0;
-  color: #333; /* Color de texto oscuro */
-  font-weight: bold; /* Negrita para el título */
+  color: #333;
+  font-weight: bold;
 }
 
 .popup-body {
   margin-bottom: 20px;
-  max-height: 300px; /* Limita la altura del cuerpo del popup */
-  overflow-y: auto; /* Permite desplazarse si el contenido es muy largo */
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0; /* Elimina padding para un mejor ajuste de contenido */
 }
 
 .popup-body ul {
-  list-style-type: none; /* Elimina las viñetas de la lista */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -55,8 +54,17 @@
   background: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #ddd;
-  color: #555; /* Color de texto */
-  font-size: 16px; /* Tamaño de fuente */
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup-body li.selected {
+  background-color: #e0e0e0; /* Fondo para ítem seleccionado */
+}
+
+.popup-body li:hover {
+  background-color: #f0f0f0; /* Fondo al pasar el mouse */
 }
 
 .popup-footer {
@@ -66,46 +74,38 @@
 
 .popup-footer button {
   padding: 10px 20px;
-  background-color: #007bff; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s; /* Animación suave al pasar el ratón */
 }
 
 .popup-footer button:hover {
-  background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+  background-color: #0056b3;
 }
 
 .close-button {
-  background: none;
+  padding: 5px;
+  padding-left: 9px;
+  padding-right: 9px;
+  background-color: #ff4d46; /* Rojo característico */
   border: none;
-  font-size: 24px;
-  color: #999;
+  border-radius: 25%; /* Forma redonda */
   cursor: pointer;
+  color: #ffffff; /* Color del icono */
+  font-size: 20px; /* Tamaño de la "X" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para color y fondo */
+  margin-bottom: 3px;
 }
 
 .close-button:hover {
-  color: #333;
+  background-color: #d12d26; /* Rojo más oscuro al pasar el ratón */
+  color: #f1f1f1; /* Color más claro para el icono al pasar el ratón */
 }
-.popup-body ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.popup-body li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.popup-body li.selected {
-  background-color: #e0e0e0; /* Color de fondo para el ítem seleccionado */
-}
-
-.popup-body li:hover {
-  background-color: #f0f0f0; /* Color de fondo al pasar el mouse sobre el ítem */
-}
-
 

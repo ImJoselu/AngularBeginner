@@ -6,7 +6,7 @@
   </div>
   <div class="popup-body">
     <ul>
-       <li *ngFor="let item of items" (click)="selectItem(item)" [class.selected]="item === selectedItem">{{ item }}</li>
+      <li *ngFor="let item of items" (click)="selectItem(item)" [class.selected]="item === selectedItem">{{ item }}</li>
     </ul>
   </div>
   <div class="popup-footer">
