@@ -6,10 +6,6 @@ Este proyecto es de carácter personal y ha sido creado con el objetivo de apren
 
 Este proyecto utiliza la v18.20.4 de node
 
-## Servidor de Desarrollo
-
-Para iniciar el servidor de desarrollo, ejecuta ng serve. Luego, navega a http://localhost:4200/. La aplicación se recargará automáticamente al realizar cambios en los archivos fuente.
-
 ## Generación de Código
 
 Para generar un nuevo componente, ejecuta ng generate component nombre-del-componente. También puedes utilizar ng generate para crear directivas, pipes, servicios, clases, guards, interfaces, enums, o módulos.
@@ -17,6 +13,10 @@ Para generar un nuevo componente, ejecuta ng generate component nombre-del-compo
 ## Construcción del Proyecto
 
 Ejecuta ng build para construir el proyecto. Los archivos resultantes se almacenarán en el directorio dist/.
+
+## Servidor de Desarrollo
+
+Para iniciar el servidor de desarrollo, ejecuta ng serve. Luego, navega a http://localhost:4200/. La aplicación se recargará automáticamente al realizar cambios en los archivos fuente.
 
 ## Ejecución de Pruebas Unitarias
 
