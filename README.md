@@ -2,6 +2,10 @@
 
 Este proyecto es de carácter personal y ha sido creado con el objetivo de aprender Angular desde cero. Fue generado utilizando Angular CLI versión 18.2.2.
 
+## Version de Node
+
+Este proyecto utiliza la v18.20.4 de node
+
 ## Servidor de Desarrollo
 
 Para iniciar el servidor de desarrollo, ejecuta ng serve. Luego, navega a http://localhost:4200/. La aplicación se recargará automáticamente al realizar cambios en los archivos fuente.
